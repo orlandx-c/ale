@@ -1,0 +1,134 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #fdd7e4, #ffb7c3, #ffe4e1, #ffdab9);
+    background-size: 300% 300%;
+    animation: bg-animation 10s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% { background-position: left top; }
+    100% { background-position: right bottom; }
+}
+
+.neon-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 90px;
+}
+
+
+.word {
+    opacity: 0.3;
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+.neon-text span {
+    opacity: 0.3;
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+@keyframes neon-glow {
+    0% { text-shadow: none; opacity: 0.3; }
+    100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff1493; opacity: 1; }
+}
+
+.neon-text span:nth-child(1) { animation-delay: 0s; }
+.neon-text span:nth-child(2) { animation-delay: 0.2s; }
+.neon-text span:nth-child(3) { animation-delay: 0.4s; }
+.neon-text span:nth-child(4) { animation-delay: 0.6s; }
+.neon-text span:nth-child(5) { animation-delay: 0.8s; }
+.neon-text span:nth-child(6) { animation-delay: 1s; }
+.neon-text span:nth-child(7) { animation-delay: 1.2s; }
+.neon-text span:nth-child(8) { animation-delay: 1.4s; }
+.neon-text span:nth-child(9) { animation-delay: 1.6s; }
+.neon-text span:nth-child(10) { animation-delay: 1.8s; }
+
+.btn-valentine {
+    text-decoration: none; /* Quita el subrayado */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #ffb7c3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-valentine:hover {
+    background-color: #ff69b4;
+    transform: scale(1.1);
+}
+
+.tulips-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.tulip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: appear 2s forwards;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stem {
+    width: 6px;
+    height: 100px;
+    background: green;
+    position: relative;
+    animation: grow-stem 2s forwards;
+}
+
+@keyframes grow-stem {
+    from { height: 0; }
+    to { height: 100px; }
+}
+
+.petals {
+    width: 30px;
+    height: 30px;
+    background: #ff69b4;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    animation: bloom 2s 1s forwards;
+}
+
+@keyframes bloom {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.leaves {
+    width: 20px;
+    height: 20px;
+    background: green;
+    position: absolute;
+    bottom: 30px;
+    border-radius: 50%;
+    animation: grow-leaves 2s 1s forwards;
+}
+
+@keyframes grow-leaves {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
